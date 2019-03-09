@@ -131,9 +131,9 @@ derowallet.io
 
 The following are not acceptable:
 
-www.derowallet.io
-https://derowallet.io
-derowallet.io/index.html
+* www.derowallet.io
+* https://derowallet.io
+* derowallet.io/index.html
 
 The IP address must be entered exactly, with no preceding or trailing spaces.
 
@@ -223,7 +223,7 @@ The following example transfers the ownership to dEToc2bFpqcfK6UPUJBwe7DPbhCZELz
 curl -X POST http://127.0.0.1:30309/json_rpc -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":"0","method":"transfer_split","params":{"mixin":5,"get_tx_key": true , "sc_tx":{"entrypoint":"TransferOwnership","scid":"9caa493a0167238cef5ec0394558a2bd9127c82f8bf0e90ea572aaf3703e819f", "params":{ "newOwner":"dEToc2bFpqcfK6UPUJBwe7DPbhCZELzuaUGbBHjvrUCb5SPhfXM1FpvbV3oTEMYUbT3AgSicDoFdbCrJW3rKDGWz5x4SWyvV1Q" } } }}'
 ```
 
-The new owner (dEToc2bFpqcfK6UPUJBwe7DPbhCZELzuaUGbBHjvrUCb5SPhfXM1FpvbV3oTEMYUbT3AgSicDoFdbCrJW3rKDGWz5x4SWyvV1Q) must then call the following function to claim onwership and complete the transfer:
+The new owner must then call the following function to claim onwership and complete the transfer:
 
 ```
 curl -X POST http://127.0.0.1:30309/json_rpc -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":"0","method":"transfer_split","params":{"mixin":5,"get_tx_key": true , "sc_tx":{"entrypoint":"ClaimOwnership","scid":"9caa493a0167238cef5ec0394558a2bd9127c82f8bf0e90ea572aaf3703e819f" } }}'
